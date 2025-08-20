@@ -1,4 +1,4 @@
-import ResCard from "./ResCard"
+import ResCard from "./ResList"
 
 const Body = () => {
     return (
