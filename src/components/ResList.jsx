@@ -17,7 +17,7 @@ const ResList = () => {
     
     const getRestaurantData = async () => {
         try {
-            const response = await fetch("https://pastebin.com/raw/0QcdEDBL")
+            const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=9.94060&lng=76.26530&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
             const json = await response.json()
             const restaurantList = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || []
             setRestaurants(restaurantList)

@@ -16,7 +16,7 @@ const ResPage = () => {
   
   const fetchResInfo = () => {
     fetch(`
-https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=9.94060&lng=76.26530&restaurantId=704922&catalog_qa=undefined&submitAction=ENTER`)
+https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=9.94060&lng=76.26530&restaurantId=${params.id}&catalog_qa=undefined&submitAction=ENTER`)
     .then((res) => res.json())
     .then((data) => {
       const cards  = data.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards
