@@ -5,6 +5,7 @@ import ErrorMessage from './ErrorMessage'
 import ResFoodItem from './ResFoodItem'
 
 const ResPage = () => {
+  
   const params = useParams()
   useEffect(()=>{
     fetchResInfo()

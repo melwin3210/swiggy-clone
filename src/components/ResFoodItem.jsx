@@ -1,7 +1,10 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../store/slices/cartSlice'
 const IMG_BASE_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
 
 const ResFoodItem = ({ category }) => {
+     const dispatch = useDispatch()
     return (
         <>
 
@@ -25,7 +28,7 @@ const ResFoodItem = ({ category }) => {
                                             alt={item.card.info.name}
                                             className='w-24 h-24 object-cover rounded-lg'
                                         />
-                                        <button className='absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-orange-500 hover:bg-orange-600 text-white px-1 py-1 rounded-md text-sm font-medium transition-colors duration-200'>
+                                        <button onClick={() => dispatch(addToCart(item))} className='absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-orange-500 hover:bg-orange-600 text-white px-1 py-1 rounded-md text-sm font-medium transition-colors duration-200'>
                                             Add +
                                         </button>
                                     </div>
