@@ -8,6 +8,7 @@ import ResDetails from './components/ResPage'
 
 import { Provider } from 'react-redux'
 import { store } from './store/store'
+import Cart from './components/Cart'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path={`/resDetails/:id`} element={<ResDetails />} />
+          <Route path={`/cart`} element={<Cart />} />
         </Routes>
       </BrowserRouter>
     </Provider>
