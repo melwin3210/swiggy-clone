@@ -6,17 +6,24 @@ import About from './components/About'
 import Contact from './components/Contact'
 import ResDetails from './components/ResPage'
 
+import { Provider } from 'react-redux'
+import { store } from './store/store'
+import Cart from './components/Cart'
+
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Body />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path={`/resDetails/:id`} element={<ResDetails />} />
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Body />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path={`/resDetails/:id`} element={<ResDetails />} />
+          <Route path={`/cart`} element={<Cart />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   )
 }
 

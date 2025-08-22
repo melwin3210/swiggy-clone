@@ -5,6 +5,7 @@ import ErrorMessage from './ErrorMessage'
 import ResFoodItem from './ResFoodItem'
 
 const ResPage = () => {
+  
   const params = useParams()
   useEffect(()=>{
     fetchResInfo()
@@ -56,8 +57,12 @@ https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&la
                 ▼
               </span>
             </div>
-            {i === accordionIndex && <ResFoodItem category={category}/>
-            }
+
+            {i === accordionIndex && <div className='p-4 space-y-4 bg-gray-50'>
+              {category?.card?.card?.itemCards?.map((item, index) => {
+                return (<ResFoodItem item={item} index={index} />)
+              })}
+            </div>}
           </div>
         ))}
       </div>
